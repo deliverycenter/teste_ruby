@@ -5,7 +5,6 @@
 * `ruby 2.7.1`
 * `rails 6.0.3`
 * `postgres 12`
-* `Docker`
 
 ## About
 

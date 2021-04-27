@@ -63,7 +63,7 @@ class Api::V1::OrdersController < ApplicationController
 
   def create_order
     attributes = payload
-    attributes[:items_attributes].map! { |hash| hash.except!(:sub_items) }
+    attributes[:items_attributes].map! { |hash| hash&.except!('sub_items') }
 
     @order = Order.create!(attributes)
   end
@@ -83,10 +83,10 @@ class Api::V1::OrdersController < ApplicationController
     buyer_phone = order_params["buyer"]["phone"]
 
     {
-      external_code: buyer["id"].to_s,
-      name: buyer["nickname"].to_s,
-      email: buyer["email"].to_s,
-      contact: "#{buyer_phone["area_code"]}#{buyer_phone["number"]}"
+      "external_code" => buyer["id"].to_s,
+      "name" => buyer["nickname"].to_s,
+      "email" => buyer["email"].to_s,
+      "contact" => "#{buyer_phone["area_code"]}#{buyer_phone["number"]}"
     }
   rescue NoMethodError
     {}
@@ -95,12 +95,12 @@ class Api::V1::OrdersController < ApplicationController
   def items_block
     order_params["order_items"].map do |item|
       {
-        external_code: item["item"]["id"],
-        name: item["item"]["title"],
-        price: item["full_unit_price"],
-        quantity: item["quantity"],
-        total: item["unit_price"].to_f * item["quantity"].to_i,
-        sub_items: []
+        "external_code" => item["item"]["id"],
+        "name" => item["item"]["title"],
+        "price" => item["full_unit_price"],
+        "quantity" => item["quantity"],
+        "total" => item["unit_price"].to_f * item["quantity"].to_i,
+        "sub_items" => []
       }
     end
   rescue NoMethodError
@@ -110,8 +110,8 @@ class Api::V1::OrdersController < ApplicationController
   def payments_block
     order_params["payments"].map do |payment|
       {
-        type: payment["payment_type"].upcase,
-        value: payment["total_paid_amount"]
+        "type" => payment["payment_type"].upcase,
+        "value" => payment["total_paid_amount"]
       }
     end
   rescue NoMethodError

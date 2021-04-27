@@ -27,6 +27,6 @@ curl -H 'Content-Type: application/json' \
 
 * Possible responses:
 
-  - 201 - Successfully created
-  - 422 - Cant create order, please check your params  
+  - 202 - Successfully created
+  - 404 - Cant create order, please check your params  
   - 503 - Cant send order to remote server

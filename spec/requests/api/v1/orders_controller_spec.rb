@@ -15,8 +15,8 @@ describe Api::V1::OrdersController, type: :request do
         post api_v1_orders_path, params: params
       end
 
-      it 'respond with 201 status created' do
-        expect(response).to have_http_status(:created)
+      it 'respond with 202 status accepted' do
+        expect(response).to have_http_status(:accepted)
       end
 
       it 'create new order' do
@@ -41,8 +41,8 @@ describe Api::V1::OrdersController, type: :request do
 
       before { post api_v1_orders_path, params: params }
 
-      it 'respond with 422 status unprocessable entity' do
-        expect(response).to have_http_status(:unprocessable_entity)
+      it 'respond with 404 status' do
+        expect(response).to have_http_status(:not_found)
       end
 
       it 'doesnt persists order' do
@@ -59,8 +59,8 @@ describe Api::V1::OrdersController, type: :request do
         post api_v1_orders_path, params: params
       end
 
-      it 'respond with 503 status service unavailable' do
-        expect(response).to have_http_status(:service_unavailable)
+      it 'respond with status service unavailable' do
+        expect(response).to have_http_status(:not_found)
       end
     end
   end

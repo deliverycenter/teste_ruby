@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
-  rescue_from ActiveRecord::RecordInvalid do |error|
-    render status: :unprocessable_entity,
-           json: { errors: error.record.errors.full_messages }
+  rescue_from StandardError do |error|
+    render status: :not_found
   end
 end

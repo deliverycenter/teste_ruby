@@ -1,10 +1,8 @@
 AllCops:
   TargetRubyVersion: 2.7.1
   Exclude:
-    - 'app/channels/**/*'
     - 'bin/**/*'
     - 'db/**/*'
-    - 'config/**/*'
   NewCops: enable
 
 Style/FrozenStringLiteralComment:
@@ -12,8 +10,6 @@ Style/FrozenStringLiteralComment:
 
 Metrics/BlockLength:
   Enabled: true
-  Exclude:
-    - spec/**/*
 
 Style/ClassAndModuleChildren:
   EnforcedStyle: compact
@@ -22,11 +18,7 @@ Style/Documentation:
   Enabled: false
 
 Metrics/MethodLength:
-  Max: 35
-  Exclude:
-    - app/controllers/api/v1/orders_controller.rb
+  Max: 20
 
 Metrics/AbcSize:
   Enabled: true
-  Exclude:
-    - app/models/payload/builder.rb

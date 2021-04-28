@@ -1,6 +1,6 @@
 ## Ruby Backend Test:
 
-Os detalhes da execução e avaliação do teste podem ser vistos **[neste link](TEST.md)**.
+Os detalhes da execução e avaliação do teste podem ser visualizados **[neste link](TEST.md)**.
 
 *Após a finalização do teste sinta-se livre para utilizar este readme como documentação.*
 #

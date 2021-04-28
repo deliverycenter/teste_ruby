@@ -7,7 +7,7 @@ describe Api::V1::OrdersController, type: :request do
     let(:process_service) { instance_spy(ProcessOrderService) }
 
     context "when it succeeds" do
-      let(:params) { JSON.parse(File.read("spec/fixtures/raw_order.json")).deep_symbolize_keys }
+      let(:params) { JSON.parse(File.read("spec/fixtures/processed_order_v1.json")).deep_symbolize_keys }
 
       before do
         allow(process_service).to receive(:call).and_return(true)

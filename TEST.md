@@ -35,4 +35,8 @@ Nesta nova api adicionamos uma camada de segurança no consumo dos endpoints, po
 * `endpoint` - `/auth/get_token`
 
 #
+
+### Após a finalização do teste, ele deve ser entregue seguindo estes passos:
+1.
+#
 *Sinta-se à vontade para alterar, organizar e limpar o código como achar necessário, assim como criar novos casos de teste, documentar o projeto e utilizar ferramentas que melhoram a qualidade e confiabilidade do código. A avaliação ocorrerá em acordo com o esforço colocado no projeto.*

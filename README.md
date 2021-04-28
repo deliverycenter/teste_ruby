@@ -1,10 +1,8 @@
 ## Ruby Backend Test:
 
-A Delivery Center está em constante expansão, e um dos pontos chave desse crescimento é a captação de pedidos em diversos canais. Recentemente, um destes canais efetuou a migração de seus serviços para uma nova API. Para manter a integridade da operação neste canal, precisamos refatorar um código legado que recebe e envia este pedido. Nesta nova integração iremos utilizar uma nova autenticação, onde iremos receber um token válido por uma hora para o envio do pedido.
+Os detalhes da execução e avaliação do teste podem ser vistos **[neste link](TEST.md)**.
 
-Os detalhes da execução e avaliação do teste podem ser vistos [neste link](TEST.md).
-
-**Após a finalização do teste sinta-se livre para utilizar este readme como documentação.**
+*Após a finalização do teste sinta-se livre para utilizar este readme como documentação.*
 #
 ## Stack
 * `ruby 2.7.1`

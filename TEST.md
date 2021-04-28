@@ -5,12 +5,11 @@ A Delivery Center está em constante expansão, e um dos pontos chave desse cres
 **Dentre as necessidades desta refatoração, estão:**
 * Buscar o token de autenticação via api
 * Incluir autenticação na chamada de envio do pedido.
-* Persistir dados do pedido sempre que houver sucesso no envio.
-* Reorganizar o código existente
-* Criar as entidades necessárias
+* Criar e organizar as entidades necessárias
+* Persistir dados do pedido.
+* Organizar o código existente
 * Incluir testes para as mudanças
 * A porcentagem de cobertura de testes não deve diminuir
-
 
 No fluxo atual do projeto recebemos o **[payload](spec/fixtures/raw_order.json)** do pedido, parseamos a resposta, salvamos no banco de dados e enviamos o payload parseado para o endpoint:
 
